@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swipable demo</title>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="swipable.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(function(){
+			//define #myswipable as swipable
+			$("#myswipable").swipable({
+				threshold: 10,
+				swipeLeft: function(drag_x){
+					console.log('swipe.left');
+					console.log(drag_x);
+					$(this).css({ marginLeft: 0 + 'px'});
+				},
+				swipeRight: function(drag_x){
+					console.log('swipe.right');
+					console.log(drag_x);
+					$(this).css({ marginLeft: 200 + 'px'});
+				},
+			});
+			
+			$("#myswipable2").swipable({
+				//threshold: default value
+				swipeLeft: function(drag_x){
+					console.log('swipe.left');
+					console.log(drag_x);
+					$(this).css({ marginLeft: 0 + 'px'});
+				},
+				swipeRight: function(drag_x){
+					console.log('swipe.right');
+					console.log(drag_x);
+					$(this).css({ marginLeft: 200 + 'px'});
+				},
+			});
+	   });
+
+	</script>
+	<div id="myswipable"  style="width:200px; height:100px; background-color:red;"></div>
+	<div style="height:100px;"></div>
+	<div id="myswipable2" style="width:200px; height:100px; background-color:blue;"></div>
+</body>
+</html>
